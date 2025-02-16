@@ -1,12 +1,37 @@
 #ifndef PIECE
 #define PIECE
 
-vector<int> getPosition();
 
-void setPostion(vector<int> currPos);
+#include <vector>
 
-String validMove(vector<int> move)
+using namespace std;
 
+class Piece {
+private:
+    vector<int> currPos;
+    bool color; // this determines piece color
+    int pieceType; // this will determine the type of the piece 1=pawn, 2=rook, etc.
+
+    char rulesForPawn(const vector<int>& move);
+    char rulesForRook(const vector<int>& move);
+    char rulesForBishop(const vector<int>& move);
+    char rulesForKnight(const vector<int>& move);
+    char rulesForQueen(const vector<int>& move);
+    char rulesForKing(const vector<int>& move);
+
+public:
+    // Constructor for initializing a piece with position, color, and type
+    Piece(vector<int> currPos, bool color, int pieceType);
+
+    // Method to validate a move for a piece
+    char validpMove(vector<int> move);
+
+    // Getter for the current position of the piece
+    vector<int> getCurrPos() const;
+
+    // Setter for updating the current position of the piece
+    void setCurrPos(vector<int> update);
+};
 
 
 #endif

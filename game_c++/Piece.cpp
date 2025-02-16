@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<vector>
+#include <cstdlib>
+
 
 using namespace std;
 
@@ -14,7 +16,7 @@ class Piece{
 
 
 
-        char rulesForPawn(vector<int> move){
+        char rulesForPawn(const vector<int>& move){
             if (move[0] == currPos[0] + 1){
                 return 'm';
             }
@@ -24,22 +26,72 @@ class Piece{
             else if  (move[0] == currPos[0] + 1 && move[1] == currPos[1] - 1 ){
                 return 'a';
             }
+            else{
+                return 'I';
+            }
 
 
         }
-        bool rulesForRook(vector<int> move){
+        char rulesForRook(const vector<int>& move){
+            if (move[0] != currPos[0]){
+                return 'a';
+            }
+            else if (move[1] != currPos[1]){
+                return 'a';
+            }
+            else{
+                return 'I';
+            }
+
 
         }
-        bool rulesForBishop(vector<int> move){
+        char rulesForBishop(vector<int> move){
+            if (move[0] != currPos[0] and move[1] == currPos[1]){
+            return 'm';
+            }
+            if (move[0] == currPos[0] and move[1] != currPos[1]){
+            return 'm';
+            }
+
+            else{
+                return 'I';
+            }
 
         }
-        bool rulesForKnight(vector<int> move){
+
+        char rulesForKnight(const vector<int>& move){
+            if (currPos[0]  - 2 <= move[0] <= currPos[0] + 2 and currPos[1] - 1 <= move[1] <= currPos[1] + 1){
+                return 'm';
+            }
+            //this condition is checking for a horizantal L
+            if (currPos[1]  - 2 <= move[1] <= currPos[1] + 2 and currPos[0] - 1 <= move[0] <= currPos[0] + 1){
+                return 'm';
+            }
+            else{
+                return 'I';
+            }
+        
+        }
+
+
+        char rulesForQueen(const vector<int>& move){
+            if (move[0] != currPos[0] and move[1] != currPos[1]){
+                return 'm';
+            }
+            else{
+                return 'I';
+            }
 
         }
-        bool rulesForQueen(vector<int> move){
-
-        }
-        bool rulesForKing(vector<int> move){
+        char rulesForKing(const vector<int>& move){
+            int yDistance = move[0] - currPos[0];
+            int xDistance = move[1] - currPos[1];
+            if ( 1 >= yDistance >= -1 and 1 >= xDistance >= -1 ){
+                return 'm';
+            }
+            else{
+                return 'I';
+            }
 
         }
     public:
@@ -69,9 +121,17 @@ class Piece{
             default:
                 break;
             }
-     
-
+        
         }
+
+        vector<int> getCurrPos() const {
+            return currPos;
+        }
+
+        void setCurrPos(vector<int> update){
+            currPos = update;
+        }
+
 
     
 
@@ -79,4 +139,4 @@ class Piece{
 
 
 
-}
+};
