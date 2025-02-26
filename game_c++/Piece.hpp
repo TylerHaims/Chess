@@ -1,8 +1,9 @@
+
 #ifndef PIECE
 #define PIECE
 
-
 #include <vector>
+#include <stdio.h>
 
 using namespace std;
 
@@ -25,10 +26,10 @@ public:
     Piece(vector<int> currPos, bool color, int pieceType);
 
     // Method to validate a move for a piece
-    char validpMove(vector<int> move);
+    char validMove(const vector<int>& move);
 
     // Getter for the current position of the piece
-    vector<int> getCurrPos() const;
+    vector<int> getCurrPos();
 
     // Setter for updating the current position of the piece
     void setCurrPos(vector<int> update);
