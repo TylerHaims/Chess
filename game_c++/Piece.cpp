@@ -47,14 +47,14 @@ class Piece{
         }
         char rulesForBishop(vector<int> move){
             if (move[0] != currPos[0] and move[1] == currPos[1]){
-            return 'm';
+            return 'I';
             }
             if (move[0] == currPos[0] and move[1] != currPos[1]){
-            return 'm';
+            return 'I';
             }
 
             else{
-                return 'I';
+                return 'm';
             }
 
         }
@@ -103,7 +103,7 @@ class Piece{
 
         }
 
-        char validpMove(vector<int> move){
+        char validpMove(const vector<int>& move){
             switch (pieceType)
             {
             case 1:
