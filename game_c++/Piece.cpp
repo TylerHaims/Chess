@@ -15,7 +15,7 @@ using namespace std;
 
 
 char Piece::rulesForPawn(const vector<int>& move){
-    if (color == 1){
+    if (color){
         if (move[0] == currPos[0] + 1 && move[1] == currPos[1]){
             return 'm';
         }
@@ -48,10 +48,10 @@ char Piece::rulesForPawn(const vector<int>& move){
 
 }
 char Piece::rulesForRook(const vector<int>& move){
-    if (move[0] != currPos[0]){
+    if (move[0] != currPos[0] && move[1] == currPos[1]){
         return 'a';
     }
-    else if (move[1] != currPos[1]){
+    else if (move[1] != currPos[1] && move[0] == currPos[0]){
         return 'a';
     }
     else{
@@ -69,18 +69,18 @@ char Piece::rulesForBishop(const vector<int>& move){
     }
 
     else{
-        return 'm';
+        return 'a';
     }
 
 }
 
 char Piece::rulesForKnight(const vector<int>& move){
     if (currPos[0]  - 2 <= move[0] <= currPos[0] + 2 and currPos[1] - 1 <= move[1] <= currPos[1] + 1){
-        return 'm';
+        return 'a';
     }
     //this condition is checking for a horizantal L
     if (currPos[1]  - 2 <= move[1] <= currPos[1] + 2 and currPos[0] - 1 <= move[0] <= currPos[0] + 1){
-        return 'm';
+        return 'a';
     }
     else{
         return 'I';
@@ -91,7 +91,7 @@ char Piece::rulesForKnight(const vector<int>& move){
 
 char Piece::rulesForQueen(const vector<int>& move){
     if (move[0] != currPos[0] and move[1] != currPos[1]){
-        return 'm';
+        return 'a';
     }
     else{
         return 'I';
@@ -102,7 +102,7 @@ char Piece::rulesForKing(const vector<int>& move){
     int yDistance = move[0] - currPos[0];
     int xDistance = move[1] - currPos[1];
     if ( 1 >= yDistance >= -1 and 1 >= xDistance >= -1 ){
-        return 'm';
+        return 'a';
     }
     else{
         return 'I';
@@ -119,7 +119,6 @@ Piece::Piece(vector<int> currPos, bool color, int pieceType){
 
 
 char Piece::validMove(const vector<int>& move){
-    cout<<"i am here"<<endl;
 
     switch (pieceType)
     {
