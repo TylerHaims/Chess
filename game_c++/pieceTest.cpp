@@ -6,8 +6,8 @@
 
 class pieceTest: public ::testing::Test{
     protected:
-    Piece *blackpawn;
-    Piece *piecePawn;
+    Piece* blackpawn;
+    Piece* piecePawn;
     Piece* pieceRook;
     Piece* pieceKnight;
     Piece* pieceBishop;
@@ -116,10 +116,62 @@ TEST_F(pieceTest, testingBishopDiagnol){
 
 }
 TEST_F(pieceTest, testingBishopInvalid){
-    vector<int> move = {2,1};
+    vector<int> move = {1,2};
     char test = pieceBishop->validMove(move);
-    EXPECT_EQ(test, 'a');
+    EXPECT_EQ(test, 'I');
  
+}
+
+TEST_F(pieceTest, testingKnightL){
+    vector<int> move1 = {3,2};
+    vector<int> move2 = {2,3};
+    vector<int> move3 = {0,3};
+    vector<int> move4 = {3,0};
+
+
+    char test1 = pieceKnight->validMove(move1);
+    char test2 = pieceKnight->validMove(move2);
+    char test3 = pieceKnight->validMove(move3);
+    char test4 = pieceKnight->validMove(move4);
+
+    EXPECT_EQ(test1, 'a');
+    EXPECT_EQ(test2, 'a');
+    EXPECT_EQ(test3, 'a');
+    EXPECT_EQ(test4, 'a');
+
+
+}
+
+
+TEST_F(pieceTest, testingKnightInvalid){
+    vector<int> move = {1,2};
+    char test = pieceKnight->validMove(move);
+    EXPECT_EQ(test, 'I');
+ 
+}
+
+TEST_F(pieceTest, testingQueenIvalid){
+    vector<int> move = {1,1};
+    char test = pieceQueen->validMove(move);
+    EXPECT_EQ(test, 'I');
+}
+
+
+TEST_F(pieceTest, testingKingIvalid){
+    vector<int> move1 = {3,1};
+    vector<int> move2 = {1,3};
+    vector<int> move3 = {4,4};
+
+
+    char test1 = pieceKing->validMove(move1);
+    char test2 = pieceKing->validMove(move2);
+    char test3 = pieceKing->validMove(move3);
+
+
+    EXPECT_EQ(test1, 'I');
+    EXPECT_EQ(test2, 'I');
+    EXPECT_EQ(test3, 'I');
+
 }
 
 
