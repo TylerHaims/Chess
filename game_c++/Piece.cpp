@@ -11,8 +11,7 @@ using namespace std;
         // bool color; //this determines piece color
 
         // int pieceType; // this will determine the type of the piece 1=pawn 2=rook
-
-
+        
 
 char Piece::rulesForPawn(const vector<int>& move){
     if (color){
