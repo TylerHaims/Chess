@@ -1,8 +1,5 @@
-#include<stdio.h>
-#include<vector>
-#include <cstdlib>
+
 #include "Piece.hpp"
-#include <iostream>
 
 using namespace std;
 

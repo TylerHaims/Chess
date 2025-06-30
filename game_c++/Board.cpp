@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <vector>
-#include "board.hpp"
+#include "Board.hpp"
+#include "Piece.hpp"
 
 
-Piece *Board::createBoard(){
+
+Board::Board(){
     for (int row = 0; row < 8; row++){
         for(int col = 0; col < 8; col++){
             //this is starting with the white pieces
@@ -59,7 +61,7 @@ void Board::deconstructBoard(){
      }
 }
 
-Piece *Board::getPiece(int row, int col){
+Piece* Board::getPiece(int row, int col){
     return squares[row][col];
 }
 
