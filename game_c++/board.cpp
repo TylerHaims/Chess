@@ -58,3 +58,8 @@ void Board::deconstructBoard(){
         }
      }
 }
+
+Piece *Board::getPiece(int row, int col){
+    return squares[row][col];
+}
+
