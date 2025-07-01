@@ -1,0 +1,29 @@
+things make with a $ means that they have been finished
+
+how to get the game to run
+so it looks like I will have to make the whole game in c++
+that includes renderin the actually board in c++
+    -Need to find a graphics package in c++
+    -make the board on there 
+After the graphics are made for the board:
+    -I thinking right now that I should try to make the digital board use the backend that I created
+    -each digital square is assigned corresponsing coordinates on the Board object and the corresponsing piece object
+        - this will make it so when a move is made the player clicks and drags a piece the move is then checked on the 
+         backend board then the postions are updated on the visual board
+         **there honestly might be no reason to have the backedn board, but if thats the case I will delete it later
+    -what I need to do now:
+        -find a grahpics package
+        -make a class for the board graphics??
+            -or should I just jave the graphics in the board class 
+                **this might make more sense and make my life easier
+        -make a class to actually run the game and set up the players
+
+
+
+
+Future ideas:
+    -I really want to figure out how to make the game accesible on a website
+    -multiplayer!?!
+    -make a AI for a person to play against 
+    -make funny gamemodes 
+

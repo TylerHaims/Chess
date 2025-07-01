@@ -1,0 +1,43 @@
+Current:
+working on the board 
+have to make the board and have to make a test to make sure that all of the
+pieces of the board are in the right spot
+
+Finsihed working on the board now trying to make the game work
+**look at the brainstorming file
+
+commands for running gtest
+
+**you can put these in a make file for your nxt set of tests
+g++ (programs that you're compiling) -lgtest(links the gtest library) -lgtest_main(creates a main function to run tests) 
+-pthread(*need to look up more about this)
+
+pthread
+-what I think it does:
+helps with multithreaded applications and google test uses multithreading internally
+-More on what it actually does:
+???
+
+
+
+learning makefile stuff:
+
+ %.o: %.cpp
+	g++ -c $< -o $@
+
+this is a cool line of code that I found for a make file that converts all .cpp files into .o files
+it gives the instructions on how to build any .o file from a .cpp file
+$< is the input (.cpp)
+$@ is the output (.o)
+
+
+make file format
+(target): prerequisit
+kinda failed at this gonna try again tmrw
+
+
+
+how I have the board and piece memory set up:
+I have the piece class allocate memory onto the heap
+the board function makes new instances of the piece class
+the board it's self is on the stack (this can be changes with the new keyword)

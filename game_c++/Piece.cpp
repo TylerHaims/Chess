@@ -143,6 +143,14 @@ void Piece::setCurrPos(vector<int> update){
     currPos = update;
 }
 
+bool Piece::getColor(){
+    return color;
+}
+
+int Piece::getType(){
+    return pieceType;
+}
+
 
 
 

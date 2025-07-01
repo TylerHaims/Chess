@@ -36,6 +36,10 @@ public:
 
     // Setter for updating the current position of the piece
     void setCurrPos(vector<int> update);
+
+    bool getColor();
+
+    int getType();
 };
 
 

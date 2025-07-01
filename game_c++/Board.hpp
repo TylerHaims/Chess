@@ -1,6 +1,7 @@
 #ifndef BOARD
 #define BOARD
 //the board will be an array of pieces and all peices are aware of their own positions
+#include "Piece.hpp"
 
 class Board{
 

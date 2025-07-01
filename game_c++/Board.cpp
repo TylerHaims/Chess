@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <vector>
 #include "Board.hpp"
-#include "Piece.hpp"
 
 
 
@@ -19,10 +18,10 @@ Board::Board(){
                 squares[row][col] = new Piece({row,col}, true,4);
             } 
             else if(row == 0 && col ==3){
-                squares[row][col] = new Piece({row,col}, true, 6);
+                squares[row][col] = new Piece({row,col}, true, 5);
             }
             else if(row == 0 && col == 4){
-                squares[row][col] = new Piece({row,col}, true, 5);
+                squares[row][col] = new Piece({row,col}, true, 6);
             //this is starting the black pieces
             }
             else if(row == 7 && col == 0 || row == 7 && col == 7){
@@ -35,10 +34,10 @@ Board::Board(){
                 squares[row][col] = new Piece({row,col}, false,4);
             } 
             else if(row == 7 && col ==3){
-                squares[row][col] = new Piece({row,col}, false, 6);
+                squares[row][col] = new Piece({row,col}, false, 5);
             }
             else if(row == 7 && col == 4){
-                squares[row][col] = new Piece({row,col}, false, 5);
+                squares[row][col] = new Piece({row,col}, false, 6);
 
             }
             else if(row == 6){
