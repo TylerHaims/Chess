@@ -1,0 +1,3 @@
+SMFL notes:
+    -right now seems like it is the easier to use
+    -don't need anything too complex because it's just chess
