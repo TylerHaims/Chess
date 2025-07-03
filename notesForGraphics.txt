@@ -1,3 +1,6 @@
 SMFL notes:
     -right now seems like it is the easier to use
     -don't need anything too complex because it's just chess
+
+things that you need to link SFML to when compiling
+-lsfml-graphics -lsfml-window -lsfml-system
